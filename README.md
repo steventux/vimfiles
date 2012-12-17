@@ -7,4 +7,4 @@ NERDTree
 CommandT
 GVim compatible schemes and fonts.
 
-Thanks to @alext this config is based on ["his dotvim repo"]("https://github.com/alext/dotvim")
+Thanks to [alext](https://github.com/alext) this config is based on [dotvim repo](https://github.com/alext/dotvim)
