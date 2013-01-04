@@ -17,7 +17,7 @@ if has("gui_running")
   set ruler
   set number
   colorscheme desert 
-  set guioptions=aATmce
+  set guioptions=aAmce
   if has("gui_macvim")
     set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
     set guifont=Monaco:h10 " use Monaco 10pt
