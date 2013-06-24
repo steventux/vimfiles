@@ -60,6 +60,9 @@ filetype plugin indent on
 " override default detection of .md files as modula2
 autocmd! filetypedetect BufNewFile,BufRead *.md setfiletype markdown
 
+" custom filetypes
+autocmd! filetypedetect BufNewFile,BufRead *.ejs setfiletype ejs
+
 " Always start on first line when editing git commit messages
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
@@ -74,7 +77,7 @@ set tabstop=2
 set expandtab
 
 " highlight trailing spaces and tabs
-"set list listchars=trail:\ ,tab:>.
+set list listchars=trail:\ ,tab:>.
 "highlight SpecialKey ctermfg=DarkGray ctermbg=Red
 
 " Status line
@@ -88,3 +91,4 @@ set statusline+=%=                            " right align remainder
 "set statusline+=0x%-8B                        " character value
 set statusline+=%-14(%l,%c%V%)                " line, character
 set statusline+=%<%P                          " file position
+
