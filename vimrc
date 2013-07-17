@@ -12,17 +12,19 @@ if has("syntax")
 end
 
 set background=dark
+set number
+
+colorscheme grb256 
 
 if has("gui_running")
   set ruler
-  set number
-  colorscheme desert 
   set guioptions=aAmce
   if has("gui_macvim")
     set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
     set guifont=Monaco:h10 " use Monaco 10pt
   elseif has("gui_gtk")
-    set guifont=Monospace\ 9
+    colorscheme desert
+    set guifont=Monospace\ 10
     set lines=60 columns=180
   endif
 endif
