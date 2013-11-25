@@ -1,10 +1,20 @@
 vimfiles
 ========
 
-Vim (and GVim) config files and plugins
+vimrc and submodules
 
-NERDTree
-CommandT
+- bufexplorer
+- colorschemes
+- command-t
+- html5
+- json
+- nerdcommenter
+- nerdtree
+- rails
+- surround
+- vim-markdown-preview
+
 GVim compatible schemes and fonts.
+EJS support.
 
 Thanks to [alext](https://github.com/alext) this config is based on [dotvim repo](https://github.com/alext/dotvim)
