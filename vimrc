@@ -78,9 +78,16 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 
-" highlight trailing spaces and tabs
-set list listchars=trail:\ ,tab:>.
 "highlight SpecialKey ctermfg=DarkGray ctermbg=Red
+
+" highlight trailing spaces and tabs
+highlight TrailWhitespace ctermbg=red guibg=red
+" autocmd Syntax * syn match TrailWhitespace /\s\+$\| \+\ze\t/
+match TrailWhitespace /\s\+$/
+autocmd BufWinEnter * match TrailWhitespace /\s\+$/
+autocmd InsertEnter * match TrailWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Status line
 set laststatus=2
