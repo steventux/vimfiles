@@ -14,7 +14,7 @@ end
 set background=dark
 set number
 
-colorscheme grb256 
+colorscheme grb256
 
 if has("gui_running")
   set ruler
@@ -101,3 +101,8 @@ set statusline+=%=                            " right align remainder
 set statusline+=%-14(%l,%c%V%)                " line, character
 set statusline+=%<%P                          " file position
 
+" Autocomplete highlighting (for dark term e.g terminator)
+highlight PmenuSel ctermfg=black ctermbg=grey
+
+" Visual highlighting
+highlight Visual ctermfg=White ctermbg=LightBlue
