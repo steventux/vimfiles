@@ -31,3 +31,6 @@
 [submodule "command-t"]
 	path = command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/mustache/vim-mode.git
