@@ -115,4 +115,3 @@ if exists("g:did_load_filetypes")
 endif
 set runtimepath+=$GOROOT/misc/vim " replace $GOROOT with the output of: go env GOROOT
 filetype plugin indent on
-syntax on
