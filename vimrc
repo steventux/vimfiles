@@ -5,8 +5,6 @@ call pathogen#runtime_append_all_bundles()
 
 nnoremap <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
 
-nnoremap <leader>f :execute 'CommandTFlush'<CR>
-
 if has("syntax")
   syntax on
 end
@@ -114,4 +112,5 @@ if exists("g:did_load_filetypes")
   filetype plugin indent off
 endif
 set runtimepath+=$GOROOT/misc/vim " replace $GOROOT with the output of: go env GOROOT
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 filetype plugin indent on
