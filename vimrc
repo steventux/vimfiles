@@ -12,7 +12,7 @@ end
 set background=dark
 set number
 
-colorscheme grb256
+colorscheme neon 
 
 if has("gui_running")
   set ruler
