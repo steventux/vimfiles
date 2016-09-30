@@ -21,7 +21,6 @@ if has("gui_running")
     set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
     set guifont=Monaco:h10 " use Monaco 10pt
   elseif has("gui_gtk")
-    colorscheme desert
     set guifont=Monospace\ 10
     set lines=60 columns=180
   endif
@@ -116,6 +115,12 @@ highlight PmenuSel ctermfg=black ctermbg=grey
 
 " Visual highlighting
 highlight Visual ctermfg=White ctermbg=LightBlue
+
+" CtrlP Ctags support
+nnoremap <leader>. :CtrlPTag<cr>
+
+" Strip whitespace by file type
+autocmd FileType c,cpp,erb,go,html,json,java,php,ruby,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
