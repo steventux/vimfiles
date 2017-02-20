@@ -14,18 +14,6 @@ set number
 
 colorscheme neon
 
-if has("gui_running")
-  set ruler
-  set guioptions=aAmce
-  if has("gui_macvim")
-    set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
-    set guifont=Monaco:h10 " use Monaco 10pt
-  elseif has("gui_gtk")
-    set guifont=Monospace\ 10
-    set lines=60 columns=180
-  endif
-endif
-
 map <C-H> <C-w>h
 map <C-J> <C-w>j
 map <C-K> <C-w>k
@@ -68,14 +56,11 @@ autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " ----------------------------------------------------------------------------
 " Text Formatting
 " ----------------------------------------------------------------------------
-
 set autoindent " automatic indent new lines
 set smartindent " be smart about it
 set shiftwidth=2
 set tabstop=2
 set expandtab
-
-"highlight SpecialKey ctermfg=DarkGray ctermbg=Red
 
 " highlight trailing spaces and tabs
 highlight TrailWhitespace ctermbg=red guibg=red
@@ -85,6 +70,9 @@ autocmd BufWinEnter * match TrailWhitespace /\s\+$/
 autocmd InsertEnter * match TrailWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match TrailWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" Strip whitespace by file type
+autocmd FileType c,cpp,erb,go,html,json,java,php,ruby,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " -----------------------------------------------------------------------------
 "  Syntastic
@@ -115,7 +103,7 @@ set statusline+=%f\                           " filename
 set statusline+=%h%m%r%w                      " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}]  " file type
 set statusline+=%=                            " right align remainder
-"set statusline+=0x%-8B                        " character value
+set statusline+=0x%-8B                        " character value
 set statusline+=%-14(%l,%c%V%)                " line, character
 set statusline+=%<%P                          " file position
 
@@ -127,9 +115,6 @@ highlight Visual ctermfg=White ctermbg=LightBlue
 
 " CtrlP Ctags support
 nnoremap <leader>. :CtrlPTag<cr>
-
-" Strip whitespace by file type
-autocmd FileType c,cpp,erb,go,html,json,java,php,ruby,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
