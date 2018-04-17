@@ -64,7 +64,7 @@ set expandtab
 
 " highlight trailing spaces and tabs
 highlight TrailWhitespace ctermbg=red guibg=red
-" autocmd Syntax * syn match TrailWhitespace /\s\+$\| \+\ze\t/
+autocmd Syntax * syn match TrailWhitespace /\s\+$\| \+\ze\t/
 match TrailWhitespace /\s\+$/
 autocmd BufWinEnter * match TrailWhitespace /\s\+$/
 autocmd InsertEnter * match TrailWhitespace /\s\+\%#\@<!$/
