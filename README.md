@@ -5,7 +5,7 @@ vimrc and submodules
 
 - bufexplorer
 - colorschemes
-- command-t
+- ctrl-p
 - html5
 - json
 - nerdcommenter
