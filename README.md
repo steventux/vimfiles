@@ -1,5 +1,8 @@
-vimfiles
-========
+# vimfiles
+
+## Install
+
+https://gist.github.com/steventux/0f04c9d3314c0f7c8cf6eb9a2342f795
 
 vimrc and submodules
 
