@@ -72,7 +72,7 @@ autocmd InsertLeave * match TrailWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Strip whitespace by file type
-autocmd FileType c,cpp,erb,go,html,json,java,php,ruby,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,erb,go,html,js,json,java,php,py,ruby,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " -----------------------------------------------------------------------------
 "  Syntastic
@@ -120,6 +120,9 @@ highlight Visual ctermfg=White ctermbg=LightBlue
 
 " CtrlP Ctags support
 nnoremap <leader>. :CtrlPTag<cr>
+" CtrlP settings
+let g:ctrlp_max_files=10000
+let g:ctrlp_custom_ignore = '\v[\/](coverage|log|node_modules|tmp)|(\.(swp|ico|git|gif|png|jpg))$'
 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
