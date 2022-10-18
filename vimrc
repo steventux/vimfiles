@@ -1,5 +1,21 @@
-
 filetype off
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+  Plug 'jayli/vim-easycomplete'
+  Plug 'SirVer/ultisnips'
+call plug#end()
+
+noremap <silent> <leader>gr :EasyCompleteReference<CR>
+noremap <silent> <leader>gd :EasyCompleteGotoDefinition<CR>
+noremap <silent> <leader>rn :EasyCompleteRename<CR>
+noremap <silent> <leader>gb :BackToOriginalBuffer<CR>
+let g:easycomplete_tab_trigger="<c-space>"
 
 call pathogen#runtime_append_all_bundles()
 
@@ -12,7 +28,8 @@ end
 set background=dark
 set number
 
-colorscheme neon
+"colorscheme neon
+colorscheme busierbee
 
 map <C-H> <C-w>h
 map <C-J> <C-w>j
@@ -26,6 +43,13 @@ vmap <C-C> "+y
 
 vmap <TAB> >gv
 vmap <S-TAB> <gv
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
 
 let g:bufExplorerShowRelativePath=1
 
